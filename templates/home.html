@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="static/style.css" type="text/css"><br><br><br>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME</title>
+</head>
+<body>
+	<h2>Conbertel - Consumer Behavior in Telecom</h2>
+	<br>
+	<br>
+	<p></p>
+	<button class="btn btn-success" onclick=" window.open('/about','_blank')">About</button>
+	<br>
+	<br>
+	<button class="btn btn-success" onclick="uploadNote()">Generate New Data</button>
+	<p id="uploadNote"></p>
+	<br>
+	<br>
+	<div class="dropdown">
+		<button class="dropbtn">Show Reports</button>
+		<div class="dropdown-content">
+			<a href="#"><button class="btn btn-success" onclick=" window.open('/user_activity_count','_blank')">User Activity Count</button></a>
+			<a href="#"><button class="btn btn-success" onclick=" window.open('/distribution_by_region','_blank')">User Distribution by Region</button></a>
+			<a href="#"><button class="btn btn-success" onclick=" window.open('/distribution_by_gender','_blank')">User Distribution by Gender</button></a>
+			<a href="#"><button class="btn btn-success" onclick=" window.open('/distribution_by_age','_blank')">User Distribution by Age</button></a>
+			<a href="#"><button class="btn btn-success" onclick=" window.open('/callRecords_basic_stats','_blank')">Call Records Basic Statistics</button></a>
+			<a href="#"><button class="btn btn-success" onclick=" window.open('/revenue_by_call_timing','_blank')">Revenue by Call Timing</button></a>
+			<a href="#"><button class="btn btn-success" onclick=" window.open('/revenue_by_region','_blank')">Revenue by Region</button></a>
+			<a href="#"><button class="btn btn-success" onclick=" window.open('/revenue_by_customer','_blank')">Revenue by Customer</button></a>
+			<a href="#"><button class="btn btn-success" onclick=" window.open('/notable_customers','_blank')">Notable Customers</button></a>
+		</div>
+	</div>
+	<br>
+	<br>
+	<div align="right"><button class="btn btn-success" onclick=" window.open('/logout','_blank')">Logout</button></div>
+	<br>
+	<br>
+	<script>
+		function uploadNote() {
+			document.getElementById("uploadNote").innerHTML = "Data Uploaded";
+
+			var x = document.getElementsByClassName("dropdown");
+			x[0].style.display = "inline-block";
+		}
+	</script>
+</body>
+</html>

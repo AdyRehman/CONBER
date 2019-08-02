@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="static/style.css" type="text/css"><br>
+<div style="text-align:center"><h1><font color= "#800080">Conber - Consumer Behavior Application</font></h1></div><br>
+<form action="/login" method="POST">
+<div class="login">
+    <div class="login-screen">
+        <div class="app-title"></div>
+        <div class="login-form">
+            <div class="control-group">
+				<font color= "#800080">User Name:&nbsp </font>
+				<input type="text" class="login-field" STYLE="background-color: #800080;" value="" placeholder="username" name="username">
+                <label class="login-field-icon fui-user" for="login-name"></label></div>
+            <div class="control-group">
+				<font color= "#800080">Password:&nbsp </font>
+				&nbsp
+				<input type="password" class="login-field" STYLE="background-color: #800080;"  value="" placeholder="password" name="password">
+                <label class="login-field-icon fui-lock" for="login-pass"></label></div>
+
+        <a  onclick=" window.open('/password','_blank')"><font color= "navy"> Forget Password? &nbsp </font></a>
+        <a  onclick=" window.open('/signup','_blank')"><font color= "navy">Sign Up?</font> </a> <br><br>
+
+        <input type="submit" STYLE="background-color: #800080;"  value="Log in"  color="navy"></class="btn btn-primary btn-large btn-block">
+
+        </div>
+    </div>
+</div>
+<br><img align="right" height="100" width="100" src="{{url_for('static', filename='logo.png')}}" alt="logo"/>
+</form>
+
+
+{% if loginErrorStatus == 'true' %}
+    {% block content %}
+    <div style="text-align:center"><font size="5" color="red" >Error! Login and/or Password Information Incorrect!</font></div>
+    {% endblock content %}
+{% endif %}
