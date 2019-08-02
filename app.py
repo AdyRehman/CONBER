@@ -60,7 +60,31 @@ def do_admin_login():
 ###################################updating passwords#############################
 @app.route('/password',methods = ['GET', 'POST'])
 def password():
-    return render_template('password.html')
+    user = str(request.form.get("username", False))
+    password = str(request.form.get("password", False))
+    cpassword = str(request.form.get("cpassword", False))
+
+    print(user,password,cpassword)
+    df = pd.read_csv("./static/users.csv")
+
+    for u in df['username']:
+        print('in for')
+        if u == user:
+            print('in if')
+            if password == cpassword:
+                print('in if if')
+                df['password'][df[df['username'] == user].index.values.astype(int)] = password
+                df.to_csv('./static/users.csv', index=False)
+                loginErrorStatus = False
+                return render_template('login.html', loginErrorStatus=loginErrorStatus)
+            else:
+                print('in if else')
+                loginErrorStatus = True
+                return render_template('password.html', loginErrorStatus=loginErrorStatus)
+    loginErrorStatus = True
+    return render_template('password.html', loginErrorStatus=loginErrorStatus)
+
+
 ##################################sign up new user################################
 @app.route('/signup',methods = ['GET', 'POST'])
 def signup():
