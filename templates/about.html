@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="static/style.css" type="text/css"><br>
+<div style="text-align:center"><h1><font color= "#800080">Conber - Consumer Behavior Application</h1></div>
+<div class="l-bottom" align="left" >
+	<table width="100%" cellspacing="0%" bgcolor="white" width="100%">
+ 	<tr STYLE="background-color: #800080;">
+	 <td> <a href="#"><button class="btn btn-success" STYLE="background-color: #800080;" onclick=" window.open('/homee','_blank')"><font color= "#ffffff">Home</font></button></a>
+	
+	 <a href="#"><button class="btn btn-success" STYLE="background-color: #800080;" onclick=" window.open('/about')"><font color= "#ffffff">About</font></button></a></td>
+
+	</tr>
+</table>
+</div>
+
+
+<div class="about">	
+	
+	<h1 align="center">About </h1>
+	<br>
+	<p><h3 align="center">Conber provides consumer behavior reports in telecom industry but can be used in other industries too.</h3></p>
+	<p><h3 align="center">This is the beta version created by Usman Hidayat as part of his internship assignment at <a href="https://chirondatao2.com/">Chiron DataO2 LLC.,</a><p></p> which is a data services start up with offices in Chicago, USA; Melbourne, Australia; and Islamabad, Pakistan.</h3>
+</p>{% endblock %}
+</div>
+<img align="right" height="100" width="100" src="{{url_for('static', filename='logo.png')}}" alt="logo"/>
