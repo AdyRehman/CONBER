@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<h1>Call Records Basic Statistics</h1>
+	<p>Total Average Call Time: {{ totalAverageCallTime }}</p>
+	<p>MMS Uses: {{ quantMMS }}</p>
+	<p>Text Uses: {{ quantText }}</p>
+	<p>Voice Uses: {{ quantVoice }}</p>
+	<p>Web Uses: {{ quantWeb }}</p>
+	<p>Usage Duration/Quantity Minimum: {{ durationMin }}</p>
+	<p>Usage Duration/Quantity Maximum: {{ durationMax }}</p>
+	<p>Total Revenue: {{ totalRevenue }}</p>
+{% endblock %}

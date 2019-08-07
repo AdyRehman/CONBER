@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	<h1>Notable Customers</h1>
+	<h2>Top 10 Revenue Customers</h2>
+		{% for stringOutput in highOutputList %}
+			<p>{{ stringOutput }} </p>
+		{% endfor %}
+	<br>
+	<br>
+	<h2>Lowest 10 Revenue Customers</h2>
+		{% for stringOutput in lowOutputList %}
+			<p>{{ stringOutput }} </p>
+		{% endfor %}
+{% endblock %}

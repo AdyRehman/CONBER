@@ -1,32 +1,30 @@
-<link rel="stylesheet" href="static/style.css" type="text/css"><br><br><br>
-<div style="text-align:center"><h1><font color= "#800080">Conber - Consumer Behavior Application</h1></div>
+<link rel="stylesheet" href="static/style.css" type="text/css"><br>
+<title>CONBER</title>
+<div style="text-align:center"><h1><font color= "#800080">Conber - Consumer Behavior Application</font></h1></div><br>
 <form action="/login" method="POST">
 <div class="login">
-<div class="login-screen">
-<div class="app-title">
-</div>
-<div class="login-form">
-<div class="control-group">
-				User Name:&nbsp
-				<input type="text" class="login-field"  STYLE="background-color: #800080;"   value="" placeholder="username" name="username">
-<label class="login-field-icon fui-user" for="login-name"></label></div><br>
-<div class="control-group">
-				Password:&nbsp
+    <div class="login-screen">
+        <div class="app-title"></div>
+        <div class="login-form">
+            <div class="control-group">
+				<font color= "#800080">User Name:&nbsp </font>
+				<input type="text" class="login-field" STYLE="background-color: #800080;" value="" placeholder="username" name="username">
+                <label class="login-field-icon fui-user" for="login-name"></label></div>
+            <div class="control-group">
+				<font color= "#800080">Password:&nbsp </font>
 				&nbsp
 				<input type="password" class="login-field" STYLE="background-color: #800080;"  value="" placeholder="password" name="password">
-<label class="login-field-icon fui-lock" for="login-pass"></label></div>
+                <label class="login-field-icon fui-lock" for="login-pass"></label></div>
 
-<a  onclick=" window.open('/password','_blank')"> Forget Password? &nbsp</a> 
-<a  onclick=" window.open('/createuser1','_blank')"> Create User </a> <br><br>
-</font>
-<img align="right" height="100" width="100" src="{{url_for('static', filename='logo.png')}}" alt="logo"/>
+        <a  onclick=" window.open('/password','_blank')"><font color= "navy"> Forget Password? &nbsp </font></a>
+        <a  onclick=" window.open('/signup','_blank')"><font color= "navy">Sign Up?</font> </a> <br><br>
 
-<button  STYLE="background-color: #800080;"><font color= "#ffffff">Login</class="btn btn-primary btn-large btn-block">
+        <input type="submit" STYLE="background-color: #800080;"  value="Log in"  color="navy"></class="btn btn-primary btn-large btn-block">
 
+        </div>
+    </div>
 </div>
-</div>
-</div>
-
+<br><img align="right" height="100" width="100" src="{{url_for('static', filename='logo.png')}}" alt="logo"/>
 </form>
 
 
