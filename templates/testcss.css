@@ -1,0 +1,57 @@
+div.top
+{
+	position:relative;
+	left: 10px;
+	top:20px;
+ 	width: 240px;
+	height:20px;
+	background-color:white;
+	
+	
+}
+
+div.l-bottom
+{
+	position:relative;
+	left: 190px;
+	top:40px;
+ 	width: 240px;
+	height:20px;
+	background-color:white;
+	
+	
+}
+div.l-left
+{
+	
+	position:absolute;
+	left: 200px;
+	top: 170px;
+ 	width: 730px;
+	height:430px;
+    padding: -10px;
+    margin: 1px;
+	background-color:#b8a9c9;
+}
+div.left
+{
+	
+	position:absolute;
+	left: 38px;
+	top: 170px;
+ 	width: 163px;
+	height:430px;
+    padding: -10px;
+    margin: 1px;
+	background-color:#ffffff;
+}
+div.footr
+{
+	position:relative;
+	left: 66px;
+	top:480px;
+ 	width: 890px;
+	height:40px;
+	
+	
+}
