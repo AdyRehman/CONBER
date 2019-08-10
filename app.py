@@ -7,9 +7,8 @@ import io
 ############################routing#################
 app = Flask(__name__)
 
-df2 = pd.read_csv("./static/call_record_data.csv")
 def create_revenue_by_call_timing_figure():
-    tempdf = df2.copy()
+    tempdf = pd.read_csv("./call_record_data.csv")
     tempdf.columns = [column.replace(" ", "_") for column in tempdf.columns]
     timingList = tempdf.Call_Timing.unique()
     timingListValues = []
@@ -30,7 +29,7 @@ def create_revenue_by_call_timing_figure():
 
 
 def create_distribution_by_region_figure():
-    tempdf = df2.copy()
+    tempdf = pd.read_csv("./call_record_data.csv")
     tempdf.columns = [column.replace(" ", "_") for column in tempdf.columns]
     regionList = tempdf.Origin_Region.unique()
     countValues = []
@@ -51,7 +50,7 @@ def create_distribution_by_region_figure():
 
 
 def create_revenue_by_region_figure():
-    tempdf = df2.copy()
+    tempdf = pd.read_csv("./call_record_data.csv")
     tempdf.columns = [column.replace(" ", "_") for column in tempdf.columns]
     regionList = tempdf.Origin_Region.unique()
     regionListValues = []
@@ -185,11 +184,38 @@ def home():
 @app.route("/about")
 def about():
     return render_template('about.html', title='Login')
+############################### reports ################################
+@app.route("/reports",methods = ['GET', 'POST'])
+def reports():
+    print('in reports')
+    if request.method == 'POST':
+        print('in if reports')
+        f = request.files['call_record_data']
+        f.save(f.filename)
+    return render_template('reports.html', title='reports')
+
+############################### reports admin ################################
+@app.route("/reports_admin",methods = ['GET', 'POST'])
+def reports_admin():
+    print('in reports admin')
+    if request.method == 'POST':
+        print('in if reports')
+        f = request.files['call_record_data']
+        f.save(f.filename)
+        tempdf = pd.read_csv("./call_record_data.csv")
+        columns = list(tempdf.columns)
+    return render_template('reports_admin.html', columns=columns, title='reports')
+
+############################### custom reports admin ################################
+@app.route("/custom_report",methods = ['GET', 'POST'])
+def custom_report():
+    tempdf = pd.read_csv("./call_record_data.csv")
+    return render_template('custom_report.html',title='reports')
 
 ################################call records basic stats##############
 @app.route('/callRecords_basic_stats')
 def callRecords_basic_stats():
-    tempdf = df2.copy()
+    tempdf = pd.read_csv("./call_record_data.csv")
     tempdf.columns = [column.replace(" ", "_") for column in tempdf.columns]
     totalAverageCallTime = tempdf['Duration'].mean()
     tdf2 = tempdf.groupby('Call_Type').count()
@@ -235,7 +261,7 @@ def revenue_by_region_img():
 ####################################### revenue by customers #####################
 @app.route("/revenue_by_customer")
 def revenue_by_customer():
-    tempdf = df2.copy()
+    tempdf = pd.read_csv("./call_record_data.csv")
     tempdf.columns = [column.replace(" ", "_") for column in tempdf.columns]
     customerList = tempdf.Origin_Customer_ID.unique()
     customerList.sort()
@@ -251,7 +277,7 @@ def revenue_by_customer():
 ####################################### notable customers #####################
 @app.route("/notable_customers")
 def notable_customers():
-    tempdf = df2.copy()
+    tempdf = pd.read_csv("./call_record_data.csv")
     tempdf.columns = [column.replace(" ", "_") for column in tempdf.columns]
     customerList = tempdf.Origin_Customer_ID.unique()
     totalChargeList = []
@@ -283,6 +309,23 @@ def notable_customers():
             "Customer ID: " + str(dfBottom10CustomerList[i]) + "  Total Revenue: " + str(dfBottom10TotalChargeList[i]))
 
     return render_template('notable_customers.html', highOutputList=highOutputList, lowOutputList=lowOutputList,title='Report')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 app.secret_key = 'super secret key'
 if __name__ == '__main__':
