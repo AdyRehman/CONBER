@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="static/style.css" type="text/css"><br><br><br>
+{% for item in columns %}
+    <li>{{item}}</li>
+{% endfor %}
+
+<form action="/custom_report" method="POST">
+    ROW:&nbsp
+    <input type="text" class="login-field" style="background-color: #800080;" value="" name="ROW">
+    <label class="login-field-icon fui-user" for="row"></label></div><br><br><br>
+    COLUMN:&nbsp
+    <input type="text" class="login-field" style="background-color: #800080;" value="" name="COLUMN">
+    <label class="login-field-icon fui-user" for="column"></label></div><br><br><br>
+
+    <input type="submit" STYLE="background-color: #800080;"  value="generate">
+</form>
