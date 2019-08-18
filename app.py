@@ -2,6 +2,7 @@ from flask import Flask, render_template, Response, flash, redirect, request, se
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 import pandas as pd
+import seaborn as sns
 import io
 
 ############################routing#################
@@ -69,7 +70,13 @@ def create_revenue_by_region_figure():
     plt.tight_layout()
     return fig
 
-
+def custom_report_figure(row,col):
+    df = pd.read_csv("./call_record_data.csv")
+    print(row,col)
+    fig = plt.figure()
+    plt.rcdefaults()
+    sns.catplot(x=row, y=col, kind="swarm", data=df);
+    return fig
 
 
 
@@ -209,8 +216,14 @@ def reports_admin():
 ############################### custom reports admin ################################
 @app.route("/custom_report",methods = ['GET', 'POST'])
 def custom_report():
-    tempdf = pd.read_csv("./call_record_data.csv")
-    return render_template('custom_report.html',title='reports')
+    row = str(request.form.get("ROW", False))
+    col = str(request.form.get("COLUMN", False))
+    print(row, col, type(row), type(col))
+    df = pd.read_csv("./call_record_data.csv")
+    sns.catplot(x=row, y=col, kind="swarm", data=df).savefig("./static/custom_report.png")
+    return render_template('custom_report.html', title='reports')
+
+
 
 ################################call records basic stats##############
 @app.route('/callRecords_basic_stats')

@@ -1,57 +1,6 @@
-<link rel="stylesheet" href="testcss.css" type="text/css"><br>
-
-<div style="text-align:center"><h1><font color= "#800080">Conber - Consumer Behavior Application</h1></div>
-
-</head>
-<body>
-<div class="l-bottom">
-	<table STYLE="background-color: #ffffff;"   >
-
-
- <tr>
-
- <td STYLE="background-color: #ffffff;" width="20%"  > 
-		<a href="#"><button class="btn btn-success" STYLE="background-color: #c2c2a3;" onclick=" window.open('/home','_blank')">&nbsp; Home &nbsp;</button></a>	
-</td>
-<td STYLE="background-color: #ffffff;" width="20%"  >
-		<a href="#"><button class="btn btn-success" STYLE="background-color: #c2c2a3;" onclick=" window.open('/about')">&nbsp;About &nbsp; &nbsp;</button></a>
-</td>
-<td STYLE="background-color: #ffffff;" width="20%">
-		<a href="#"><button class="btn btn-success" STYLE="background-color: #c2c2a3;"  onclick=" window.open('/logout','_blank')">Logout</button></div>
-	
-</td>
-
-</tr>
-</table>
-</div>
-<div class="left">
-<table>
-</tr>
-	
-	<tr>
-		<td STYLE="background-color: #c2c2a3;" width ="20%"><a href="#"><button class="btn btn-success" STYLE="background-color:#c2c2a3;" onclick=" window.open('/revenue_by_call_timing','_blank')">Revenue by Call Timing&nbsp;</button></a>
-	</td>
-
-	<tr>
-		<td STYLE="background-color: #c2c2a3;" width ="20%"><a href="#"><button class="btn btn-success" STYLE="background-color: #c2c2a3;" onclick=" window.open('/revenue_by_region','_blank')">Revenue by Region &nbsp; &nbsp; &nbsp;&nbsp;</button></a>
-	</td>
-	</tr>
-	
-	<tr>
-		<td STYLE="background-color: #c2c2a3;" width ="20%"><a href="#"><button class="btn btn-success" STYLE="background-color: #c2c2a3;" onclick=" window.open('/revenue_by_customer','_blank')">Revenue by Customer &nbsp; &nbsp;</button></a>
-	</td>
-	</tr>
-	
-	<tr>
-		<td STYLE="background-color: #c2c2a3;" width ="20%"><a href="#"><button class="btn btn-success" STYLE="background-color: #c2c2a3;" onclick=" window.open('/notable_customers','_blank')">Notable Customers &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;</button></a>
-	</td>
-	</tr>
-	
-	</table>
-	</div>
-	<div class="l-left">
-	
-	</div>
-	<div class="footr">
-<img align="right" height="100" width="100" src="logo.png" alt="logo"/>
-</div>
+{% extends "layout.html" %}
+​
+{% block content %}
+	<h1>Revenue by Region</h1>
+	<img src="/revenue_by_region_img.png" alt="revenue_by_region_img.png">
+{% endblock %}

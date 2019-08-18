@@ -1,41 +1,27 @@
-<link rel="stylesheet" href="testcss.css" type="text/css"><br>
-
-<div style="text-align:center"><h1><font color= "#800080">Conber - Consumer Behavior Application</h1></div>
-
-</head>
-<body>
+<link rel="stylesheet" href="static/style.css" type="text/css"><br><br><br>
+<div style="text-align:center"><h1><font color= "#800080">Conber - Consumer Behavior Application></font></h1></div>
 <div class="l-bottom">
-	<table STYLE="background-color: #ffffff;"   >
+	<table width="100%" cellspacing="0%" bgcolor="white" width="100%">
+ 	<tr STYLE="background-color: #800080;">
+	 <td> <a href="#"><button class="btn btn-success" STYLE="background-color: #800080;" onclick=" window.open('/home','_blank')"><font color= "#ffffff">Home</font></button></a>
+	 </td><td>
 
-
- <tr>
-
- <td STYLE="background-color: #ffffff;" width="20%"  > 
-		<a href="#"><button class="btn btn-success" STYLE="background-color: #c2c2a3;" onclick=" window.open('/home','_blank')">&nbsp; Home &nbsp;</button></a>	
+	 <a href="#"><button class="btn btn-success" STYLE="background-color: #800080;" onclick=" window.open('/about')"><font color= "#ffffff">About</font></button></a></td>
 </td>
-<td STYLE="background-color: #ffffff;" width="20%"  >
-		<a href="#"><button class="btn btn-success" STYLE="background-color: #c2c2a3;" onclick=" window.open('/about')">&nbsp;About &nbsp; &nbsp;</button></a>
-</td>
-<td STYLE="background-color: #ffffff;" width="20%">
-		<a href="#"><button class="btn btn-success" STYLE="background-color: #c2c2a3;"  onclick=" window.open('/logout','_blank')">Logout</button></div>
-	
-</td>
+	</tr>
 
-</tr>
-</table>
+	<tr>
+		<td rowspan="5">
+
+		<form action="/reports" method = "POST" enctype = "multipart/form-data">
+		    <font color= "#800080">Upload Data File</font><br>
+		    <input STYLE="background-color: #800080;"  type="file"  name="call_record_data" accept=".csv">
+		    <input STYLE="background-color: #800080;" type="submit" value="Send">
+        </form>
+
+	</td>
+	</tr>
+
+	</table>
 </div>
-<div class="l-left">
-<form action="http://jkorpela.fi/cgi-bin/echo.cgi"
-		enctype="multipart/form-data" method="post">
-		<br><br><br><br>
-		<p align="center">
-		<font color= "#800080">Upload Data File</font>
-		<input type="file" accept=".csv">
-		</p>
-	<div><br><br>
-		<input STYLE="background-color: #800080;" type="submit" value="Send">
-	</div></form>
-	</div>
-	<div class="footr">
-<img align="right" height="100" width="100" src="logo.png" alt="logo"/>
-</div>
+<img align="right" height=

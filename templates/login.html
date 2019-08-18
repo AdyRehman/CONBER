@@ -16,20 +16,20 @@
 				<input type="password" class="login-field" STYLE="background-color: #b8a9c9;"  value="" placeholder="password" name="password">
 <label class="login-field-icon fui-lock" for="login-pass"></label></div>
 <font color= "#800080">
-<a  onclick=" window.open('/password','_blank')"> Forget Password? &nbsp</a> 
-<a  onclick=" window.open('/createuser1','_blank')"> Create User </a> <br><br>
+<a  onclick=" window.open('/password','_blank')"> Forget Password? &nbsp</a>
+<a  onclick=" window.open('/signup','_blank')"> Sign Up </a> <br><br>
 </font>
 <img align="right" height="100" width="100" src="{{url_for('static', filename='logo.png')}}" alt="logo"/>
-
+​
 <button  STYLE="background-color: #800080;"><font color= "#ffffff">Login</class="btn btn-primary btn-large btn-block">
-
+​
 </div>
 </div>
 </div>
-
+​
 </form>
-
-
+​
+​
 {% if loginErrorStatus == 'true' %}
     {% block content %}
     <div style="text-align:center"><font size="5" color="red" >Error! Login and/or Password Information Incorrect!</font></div>
